@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+
+struct VehicleData: Decodable {
+    var vinData: VINData
+    var specData: SpecificationData
+}
+
+struct VINData: Decodable {
+    var vin: String
+}
+
+struct SpecificationData: Decodable {
+    var make: String
+}
