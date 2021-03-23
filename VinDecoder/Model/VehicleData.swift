@@ -4,9 +4,11 @@ import Foundation
 struct VehicleData: Decodable {
     var vin: String
     var specification: SpecificationData
+    
 }
 
 struct SpecificationData: Decodable {
+    
     var make: String
     var year: String
     var model: String
@@ -24,4 +26,6 @@ struct SpecificationData: Decodable {
     var style: String
     var anti_brake_system: String
     var optional_seating: String
+    
+    
 }
