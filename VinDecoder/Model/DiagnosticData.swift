@@ -11,7 +11,7 @@ import Foundation
 struct DiagnosticData: Decodable {
     
     var vin: String
-    var dtcData: DTCData
+    var dtc_data: DTCData
     
 }
 
