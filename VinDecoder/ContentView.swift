@@ -52,10 +52,7 @@ struct ContentView: View {
                 Text("Trim / Edition:")
                 Text("\(data.specification.trim_level)")
                     .padding(.bottom, 15)
-                
-                // client secret: E6uY1lO3eB7qW3hK5cJ6mP8qW8wX6sO2mV0tR3sG2xM1uE0hS8
-                // client_id: 2e20399c-bd41-4eb5-9ac6-7f73dab6ab80
-                
+              
             }
            
             Group {
@@ -121,7 +118,7 @@ struct ContentView: View {
         // Avalanche FULL VIN: 3GNVKEE06AG274555
         // *******************************************************
         
-        let apiKey = "f9789218a6msh138da99e0f5a873p1e4e91jsn73c933512057"
+       
         let url = URL(string: "https://vindecoder.p.rapidapi.com/v1.1/decode_vin?vin=\(self.searchString)&rapidapi-key=\(apiKey)")
         URLSession.shared.dataTask(with: url!) { data, response, error in
             if let data = data {

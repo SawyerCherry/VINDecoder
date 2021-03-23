@@ -14,6 +14,7 @@
 		F23CCC1B2600576900DA74BC /* VehicleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CCC1A2600576900DA74BC /* VehicleData.swift */; };
 		F26767B02604453E006A6EF1 /* DiagnosticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26767AF2604453E006A6EF1 /* DiagnosticData.swift */; };
 		F26767B326044623006A6EF1 /* DiagnosticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26767B226044623006A6EF1 /* DiagnosticView.swift */; };
+		F2681EA7260A755800F12BE1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2681EA6260A755800F12BE1 /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F23CCC1A2600576900DA74BC /* VehicleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleData.swift; sourceTree = "<group>"; };
 		F26767AF2604453E006A6EF1 /* DiagnosticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticData.swift; sourceTree = "<group>"; };
 		F26767B226044623006A6EF1 /* DiagnosticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticView.swift; sourceTree = "<group>"; };
+		F2681EA6260A755800F12BE1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				F23CCC0E260030DB00DA74BC /* Assets.xcassets */,
 				F23CCC13260030DB00DA74BC /* Info.plist */,
 				F23CCC10260030DB00DA74BC /* Preview Content */,
+				F2681EA6260A755800F12BE1 /* Keys.swift */,
 			);
 			path = VinDecoder;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F23CCC0D260030DB00DA74BC /* ContentView.swift in Sources */,
+				F2681EA7260A755800F12BE1 /* Keys.swift in Sources */,
 				F23CCC0B260030DB00DA74BC /* VinDecoderApp.swift in Sources */,
 				F26767B326044623006A6EF1 /* DiagnosticView.swift in Sources */,
 				F26767B02604453E006A6EF1 /* DiagnosticData.swift in Sources */,

@@ -8,7 +8,7 @@ import SwiftUI
 
 struct DiagnosticView: View {
     
-    @State var data = DTCData(system: "", fault: "")
+    @State var dataDTC = DTCData(system: "", fault: "")
     
     @State var dtcURL = String()
     
@@ -59,11 +59,10 @@ struct DiagnosticView: View {
                 
 
                 Text("System:")
-                Text("\(data.system)")
+                Text("\(dataDTC.system)")
                     .padding(.bottom, 15)
-                    .padding(.top, 50)
                 Text("Fault:")
-                Text("\(data.fault)")
+                Text("\(dataDTC.fault)")
                     .padding(.bottom, 15)
                 
             }
@@ -74,37 +73,27 @@ struct DiagnosticView: View {
     
     func fetchAPI() {
         
+        
         // *******************************************************
         // Use these for testing in the Diagnostic Decoder Tab
         // Avalanche VIN (First 11 Digits Only): 3GNVKEE06AG
         // Error code: P0521
         // *******************************************************
         
-        let clientSecret = "uM8sD1sC0mA6jN6sP0iN3uF8eU7kT8sU0lX5xF8mS2iA1cQ6tR"
-        
-        let clientID = "5225f0af-90d1-45f8-a9ef-acf38631b650"
+       
         
         let url = URL(string: "https://api.eu.apiconnect.ibmcloud.com/hella-ventures-car-diagnostic-api/api/v1/dtc?client_id=\(clientID)&client_secret=\(clientSecret)&code_id=\(self.searchDTC)&vin=\(self.searchVIN)&language=EN")
         
         URLSession.shared.dataTask(with: url!) { data, response, error in
             if let data = data {
-                if let jsonString = String(data: data, encoding: .utf8) {
-                    print(jsonString)
-                    do {
-                        
-                        let decoder = JSONDecoder()
-                        let decodedData = try decoder.decode(DTCData.self, from: data)
-                        self.data = decodedData // Broke on this line 
-                        
-                        
-                    } catch {
-                        
-                        print("Stupid Unknown Error")
-                    }
-                    if let decodedDTC = try? JSONDecoder().decode(DTCStructure.self, from: data){
-                        self.dtcURL = decodedDTC.data[0].url
-                    }
+                do {
+                    let decoder = JSONDecoder()
+                    let decodedData = try decoder.decode(DiagnosticData.self, from: data)
+                    self.dataDTC = decodedData.dtc_data
+                } catch {
+                    print("ERROR! SOMETHING WENT WRONG!!!")
                 }
+                
             }
         }.resume()
     }

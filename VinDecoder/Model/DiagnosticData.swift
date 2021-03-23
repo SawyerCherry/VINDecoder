@@ -10,7 +10,6 @@ import Foundation
 
 struct DiagnosticData: Decodable {
     
-    var vin: String
     var dtc_data: DTCData
     
 }
@@ -21,5 +20,6 @@ struct DTCData: Decodable {
     var fault: String
     
 }
+
 
 
