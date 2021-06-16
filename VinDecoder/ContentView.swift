@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    // Just some empty dummy data, so that the API will replace them as needed.
     @State var data = VehicleData(vin: "", specification: SpecificationData(make: "", year: "", model: "", engine: "", trim_level: "", made_in: "", drive_type: "", fuel_type: "", overall_height: "", overall_length: "", overall_width: "", highway_mileage: "", city_mileage: "", transmission: "", style: "", anti_brake_system: "", optional_seating: ""))
+    
     @State var vinURL = String()
     @State var searchString = String()
     
@@ -29,17 +30,19 @@ struct ContentView: View {
                     UIApplication.shared.open(VINUrl)
                 }
             
-            
+            // this is an instance of where the user can enter their VIN
             TextField("Enter Your VIN", text: $searchString)
                 .multilineTextAlignment(.center)
                 .padding(.bottom, 35)
             
+            //this button, when tapped, calls on the fetch API function.
             Button("Fetch Data"){fetchAPI()}
                 .padding(.all, 5.0)
             
             // SwiftUI only lets you put 10 Texts in, you can put them in groups to fix this error, just split them up.
+            
+            //Regrouped Specifications
             Group {
-              
                 Text("Year:")
                 Text("\(data.specification.year)")
                     .padding(.bottom, 15)
@@ -52,9 +55,9 @@ struct ContentView: View {
                 Text("Trim / Edition:")
                 Text("\(data.specification.trim_level)")
                     .padding(.bottom, 15)
-              
             }
-           
+            
+           //Regrouped Specifications
             Group {
                 Text("Engine Specifications:")
                 Text("\(data.specification.engine)")
@@ -68,8 +71,8 @@ struct ContentView: View {
                     .padding(.bottom, 15)
             }
             
+            //Regrouped Specifications
             Group {
-               
                 Text("Manufactured In:")
                 Text("\(data.specification.made_in)")
                     .padding(.bottom, 15)
@@ -82,11 +85,10 @@ struct ContentView: View {
                 Text("Width of Vehicle:")
                 Text("\(data.specification.overall_width)")
                     .padding(.bottom, 15)
-                
             }
             
+            //Regrouped Specifications
             Group {
-                
                 Text("Height of Vehicle:")
                 Text("\(data.specification.overall_height)")
                     .padding(.bottom, 15)
@@ -104,14 +106,12 @@ struct ContentView: View {
                     .padding(.bottom, 15)
                 
             }
-            
         }
-            
-        
     }
     
-    
     func fetchAPI() {
+        
+        // The fetchAPI() function takes the user's entered VIN and the API Key (provided by me), and makes a request to the server, if the data can not be decoded properly inside of the structure, it will fail, leaving a message in the console.
         
         // *******************************************************
         // Use for this full VIN for testing in the Vin Decoder Tab
@@ -136,10 +136,11 @@ struct ContentView: View {
                     }
                 }
             }
-        }.resume()
+        }.resume() //we use .resume() to ensure that the API go if tapped again.
     }
 }
 
+// these two structures are for decoding the URL to make the API Call.
 struct VINStructure: Decodable {
     let data: [dataStructure]
 }
