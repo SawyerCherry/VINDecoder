@@ -28,9 +28,6 @@ struct DiagnosticView: View {
                 .font(.system(size: 20))
                 .padding(.top, 50)
                 .padding(.bottom, 50)
-              
-            
-            
             
             Text("\(dtcURL)")
                 .onTapGesture {
@@ -39,40 +36,43 @@ struct DiagnosticView: View {
                     UIApplication.shared.open(DTCUrl)
                 }
             
-            TextField("Enter Your VIN", text: $searchVIN)
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 35)
-            
-            
-            TextField("Enter Your DTC", text: $searchDTC)
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 35)
-            
-            
-            Button("Fetch Data"){fetchAPI()}
-                .padding(.top, 30)
-                .padding(.bottom, 65)
-            
-            
-            
+            // refactored code and created group for the VIN, DTC, and the fetchAPI() button
             Group {
+                TextField("Enter Your VIN", text: $searchVIN)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 35)
                 
-
+                TextField("Enter Your DTC", text: $searchDTC)
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 35)
+                
+                Button("Fetch Data"){fetchAPI()}
+                    .padding(.top, 30)
+                    .padding(.bottom, 65)
+            }
+            
+            
+            
+            
+            
+            // Refactored Group, This data is what the user will get from the API
+            Group {
                 Text("System:")
                 Text("\(dataDTC.system)")
                     .padding(.bottom, 15)
                 Text("Fault:")
                 Text("\(dataDTC.fault)")
                     .padding(.bottom, 15)
-                
             }
         }
     }
-
+    
     
     
     func fetchAPI() {
         
+        // This is where the magic happens...
+        //The fetchAPI() function takes the user's entered VIN and the DTC. The API Key, and client secret and client ID (provided by me), and makes a request to the server, if the data can not be decoded properly inside of the structure, it will fail, leaving a message in the console.
         
         // *******************************************************
         // Use these for testing in the Diagnostic Decoder Tab
@@ -80,7 +80,6 @@ struct DiagnosticView: View {
         // Error code: P0521
         // *******************************************************
         
-       
         
         let url = URL(string: "https://api.eu.apiconnect.ibmcloud.com/hella-ventures-car-diagnostic-api/api/v1/dtc?client_id=\(clientID)&client_secret=\(clientSecret)&code_id=\(self.searchDTC)&vin=\(self.searchVIN)&language=EN")
         
@@ -98,6 +97,7 @@ struct DiagnosticView: View {
         }.resume()
     }
 }
+
 struct DTCStructure: Decodable {
     let data: [datasStructure]
 }

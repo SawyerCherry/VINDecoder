@@ -11,8 +11,8 @@ import SwiftUI
 struct VinDecoderApp: App {
     var body: some Scene {
         WindowGroup {
+            // This tab view displays A way of navigation fot the user, by making a tab bar at the bottom of the screen
             TabView {
-                
                 ContentView()
                     .tabItem {
                         Image(systemName: "car")
@@ -28,8 +28,6 @@ struct VinDecoderApp: App {
                     }.tag(1)
                 
             }
-            
         }
-        // 3C6UR5DL2GG106682
     }
 }
