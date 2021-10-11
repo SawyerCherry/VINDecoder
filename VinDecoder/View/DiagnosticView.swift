@@ -51,10 +51,6 @@ struct DiagnosticView: View {
                     .padding(.bottom, 65)
             }
             
-            
-            
-            
-            
             // Refactored Group, This data is what the user will get from the API
             Group {
                 Text("System:")

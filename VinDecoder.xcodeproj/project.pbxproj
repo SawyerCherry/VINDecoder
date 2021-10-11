@@ -15,6 +15,9 @@
 		F26767B02604453E006A6EF1 /* DiagnosticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26767AF2604453E006A6EF1 /* DiagnosticData.swift */; };
 		F26767B326044623006A6EF1 /* DiagnosticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26767B226044623006A6EF1 /* DiagnosticView.swift */; };
 		F2681EA7260A755800F12BE1 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2681EA6260A755800F12BE1 /* Keys.swift */; };
+		F27138AF2704E6F1006FDBBD /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27138AE2704E6F1006FDBBD /* ScannerView.swift */; };
+		F27138B12704E722006FDBBD /* ScannedVINModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27138B02704E722006FDBBD /* ScannedVINModel.swift */; };
+		F27138B32704E7DF006FDBBD /* VINRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27138B22704E7DF006FDBBD /* VINRecognition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		F26767AF2604453E006A6EF1 /* DiagnosticData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticData.swift; sourceTree = "<group>"; };
 		F26767B226044623006A6EF1 /* DiagnosticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticView.swift; sourceTree = "<group>"; };
 		F2681EA6260A755800F12BE1 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		F27138AE2704E6F1006FDBBD /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		F27138B02704E722006FDBBD /* ScannedVINModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedVINModel.swift; sourceTree = "<group>"; };
+		F27138B22704E7DF006FDBBD /* VINRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VINRecognition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +66,12 @@
 		F23CCC09260030DB00DA74BC /* VinDecoder */ = {
 			isa = PBXGroup;
 			children = (
+				F27138AD2704E6D5006FDBBD /* View */,
+				F26659D12702BA8000A999C5 /* Utility */,
 				F2BC4AEE26095AF400B55C83 /* Model */,
-				F23CCC0A260030DB00DA74BC /* VinDecoderApp.swift */,
-				F23CCC0C260030DB00DA74BC /* ContentView.swift */,
-				F26767B226044623006A6EF1 /* DiagnosticView.swift */,
 				F23CCC0E260030DB00DA74BC /* Assets.xcassets */,
 				F23CCC13260030DB00DA74BC /* Info.plist */,
 				F23CCC10260030DB00DA74BC /* Preview Content */,
-				F2681EA6260A755800F12BE1 /* Keys.swift */,
 			);
 			path = VinDecoder;
 			sourceTree = "<group>";
@@ -80,11 +84,32 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		F26659D12702BA8000A999C5 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F27138B22704E7DF006FDBBD /* VINRecognition.swift */,
+				F2681EA6260A755800F12BE1 /* Keys.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F27138AD2704E6D5006FDBBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F23CCC0C260030DB00DA74BC /* ContentView.swift */,
+				F23CCC0A260030DB00DA74BC /* VinDecoderApp.swift */,
+				F26767B226044623006A6EF1 /* DiagnosticView.swift */,
+				F27138AE2704E6F1006FDBBD /* ScannerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F2BC4AEE26095AF400B55C83 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				F26767AF2604453E006A6EF1 /* DiagnosticData.swift */,
 				F23CCC1A2600576900DA74BC /* VehicleData.swift */,
+				F27138B02704E722006FDBBD /* ScannedVINModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,10 +184,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F23CCC0D260030DB00DA74BC /* ContentView.swift in Sources */,
+				F27138AF2704E6F1006FDBBD /* ScannerView.swift in Sources */,
 				F2681EA7260A755800F12BE1 /* Keys.swift in Sources */,
+				F27138B32704E7DF006FDBBD /* VINRecognition.swift in Sources */,
 				F23CCC0B260030DB00DA74BC /* VinDecoderApp.swift in Sources */,
 				F26767B326044623006A6EF1 /* DiagnosticView.swift in Sources */,
 				F26767B02604453E006A6EF1 /* DiagnosticData.swift in Sources */,
+				F27138B12704E722006FDBBD /* ScannedVINModel.swift in Sources */,
 				F23CCC1B2600576900DA74BC /* VehicleData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

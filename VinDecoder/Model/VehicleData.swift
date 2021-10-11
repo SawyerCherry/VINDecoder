@@ -26,3 +26,6 @@ struct SpecificationData: Decodable {
     var anti_brake_system: String
     var optional_seating: String
 }
+
+
+
