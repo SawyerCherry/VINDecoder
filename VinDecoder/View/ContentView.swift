@@ -6,13 +6,12 @@
 //
 
 
-
-
 //: MARK: - VIN For Testing
     // *******************************************************
     // Use for this full VIN for testing in the Vin Decoder Tab
     // Avalanche FULL VIN: 3GNVKEE06AG274555
     // *******************************************************
+
 
 
 import SwiftUI
