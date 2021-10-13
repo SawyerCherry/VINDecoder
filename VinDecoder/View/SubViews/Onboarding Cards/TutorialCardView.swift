@@ -105,7 +105,7 @@ struct TutorialCardView: View {
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         
-        .background(LinearGradient(gradient: Gradient(colors: [Color("indigo"), Color("honolulu")]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: [Color("baby"), Color("honolulu")]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
         .padding()
     }

@@ -13,6 +13,26 @@ struct InfoCardView: View {
         ZStack {
             
             VStack(spacing: 10) {
+                
+                HStack(alignment: .center) {
+                    Image("VINDY")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100, alignment: .topLeading)
+                        .padding()
+                    Spacer()
+                    Text("Information")
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 30, weight: .semibold, design: .rounded))
+                        .frame(alignment: .center)
+                        .padding(.trailing, 15)
+                        .padding(.leading, 15)
+                        .foregroundColor(.black)
+                }
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 200, alignment: .top)
+                
+                
+                
                 Text("What is a VIN?")
                     .font(.system(.largeTitle, design: .rounded))
                     .padding(.top)
@@ -66,8 +86,6 @@ struct InfoCardView: View {
                         .multilineTextAlignment(.center)
                 }
                 .padding(.horizontal)
-                
-                
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
             .foregroundColor(Color.black)
