@@ -31,7 +31,7 @@ struct WelcomeCardView: View {
             }
         }
         .onAppear {
-            withAnimation(.easeOut(duration: 0.5)) {
+            withAnimation(.easeIn(duration: 0.5)) {
                 isAnimating = true
             }
         }
@@ -39,7 +39,7 @@ struct WelcomeCardView: View {
         
         .background(LinearGradient(gradient: Gradient(colors: [Color("carolina"), Color("indigo")]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
-        .padding(.horizontal, 20)
+        .padding()
     }
 }
 

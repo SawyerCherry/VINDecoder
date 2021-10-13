@@ -38,7 +38,7 @@ struct VinDecoderApp: App {
                     
                     InfoView()
                         .tabItem {
-                            Image(systemName: "info")
+                            Image(systemName: "info.circle")
                                 .foregroundColor(Color(UIColor.systemGreen))
                             Text("Information")
                                 .foregroundColor(Color(UIColor.systemGreen))

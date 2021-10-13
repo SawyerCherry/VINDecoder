@@ -13,6 +13,7 @@
 		F2033EBF27160C010099E1BA /* ReadyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2033EBE27160C010099E1BA /* ReadyCardView.swift */; };
 		F2033EC227160CD30099E1BA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2033EC127160CD30099E1BA /* OnboardingView.swift */; };
 		F2033EC427160D700099E1BA /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2033EC327160D700099E1BA /* InfoView.swift */; };
+		F2033EC62716786F0099E1BA /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2033EC52716786F0099E1BA /* StartButtonView.swift */; };
 		F23CCC0B260030DB00DA74BC /* VinDecoderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CCC0A260030DB00DA74BC /* VinDecoderApp.swift */; };
 		F23CCC0D260030DB00DA74BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CCC0C260030DB00DA74BC /* ContentView.swift */; };
 		F23CCC0F260030DB00DA74BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23CCC0E260030DB00DA74BC /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		F2033EBE27160C010099E1BA /* ReadyCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyCardView.swift; sourceTree = "<group>"; };
 		F2033EC127160CD30099E1BA /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F2033EC327160D700099E1BA /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		F2033EC52716786F0099E1BA /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		F23CCC07260030DB00DA74BC /* VinDecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinDecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23CCC0A260030DB00DA74BC /* VinDecoderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinDecoderApp.swift; sourceTree = "<group>"; };
 		F23CCC0C260030DB00DA74BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,9 +75,18 @@
 		F2033EC027160C6B0099E1BA /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				F2033EC7271678F30099E1BA /* Buttons */,
 				F2033EB727160B9F0099E1BA /* Onboarding Cards */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		F2033EC7271678F30099E1BA /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				F2033EC52716786F0099E1BA /* StartButtonView.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		F23CCBFE260030DB00DA74BC = {
@@ -222,6 +233,7 @@
 				F27138AF2704E6F1006FDBBD /* ScannerView.swift in Sources */,
 				F2681EA7260A755800F12BE1 /* Keys.swift in Sources */,
 				F27138B32704E7DF006FDBBD /* VINRecognition.swift in Sources */,
+				F2033EC62716786F0099E1BA /* StartButtonView.swift in Sources */,
 				F23CCC0B260030DB00DA74BC /* VinDecoderApp.swift in Sources */,
 				F2033EB927160BB60099E1BA /* WelcomeCardView.swift in Sources */,
 				F26767B326044623006A6EF1 /* DiagnosticView.swift in Sources */,
@@ -372,7 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sawyercherry.VinDecoder.V1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -394,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sawyercherry.VinDecoder.V1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
