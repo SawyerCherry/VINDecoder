@@ -12,8 +12,6 @@
     // Avalanche FULL VIN: 3GNVKEE06AG274555
     // *******************************************************
 
-
-
 import SwiftUI
 
 class ContentViewModel: ObservableObject {
@@ -21,6 +19,10 @@ class ContentViewModel: ObservableObject {
     @Published var items = [TextItem]()
     
     @Published var fullVIN = String()
+    
+    @Published var isAlerting = false
+    
+    @Published var alertingFromServer = false
     
     @Published var data = VehicleData(vin: "", specification: SpecificationData(make: "", year: "", model: "", engine: "", trim_level: "", made_in: "", drive_type: "", fuel_type: "", overall_height: "", overall_length: "", overall_width: "", highway_mileage: "", city_mileage: "", transmission: "", style: "", anti_brake_system: "", optional_seating: ""))
     
@@ -41,6 +43,7 @@ class ContentViewModel: ObservableObject {
     
     func fetchCarData(from vin: String) {
         guard let sanitizeVIN = santitizeAndValidateVIN(vin: vin) else {
+            isAlerting = true
             return print("error, vin is not valid")
         }
         
@@ -50,8 +53,6 @@ class ContentViewModel: ObservableObject {
         fullVIN = sanitizeVIN
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
-                //                if let jsonString = String(data: data, encoding: .utf8) {
-                //                    print(jsonString)
                 do {
                     let decoder = JSONDecoder()
                     let decodedData = try decoder.decode(VehicleData.self, from: data)
@@ -59,17 +60,19 @@ class ContentViewModel: ObservableObject {
                         self.data = decodedData
                     }
                 } catch {
+                    DispatchQueue.main.async {
+                        self.alertingFromServer = true
+                    }
                     print(error.localizedDescription)
                 }
-                //                }
             }
         }.resume()
     }
     
     private func santitizeAndValidateVIN(vin: String) -> String? {
         let trimmed = vin.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        // make sure to validate the sanitized VIN 17 chars
-        guard trimmed.count == 17 else {
+        // make sure to validate the sanitized VIN 17 or 12 chars
+        guard trimmed.count == 17 || trimmed.count == 12 else{
             return nil
         }
         
@@ -81,6 +84,7 @@ struct ContentView: View {
     
     @State private var showScanner = false
     @State private var isRecognizing = false
+    
   
     @StateObject var model = ContentViewModel()
     
@@ -199,12 +203,16 @@ struct ContentView: View {
                 // Dismiss the scanner controller and the sheet.
                 showScanner = false
             }
+            
         })
+        .alert("VIN is invalid", isPresented: $model.isAlerting) {
+            Button("OK", role: .cancel) { }
+        }
+        .alert("Sorry, API bad", isPresented: $model.alertingFromServer) {
+            Button("OK", role: .cancel) { }
+        }
         
     }
-
-    
-   
     
 }
 

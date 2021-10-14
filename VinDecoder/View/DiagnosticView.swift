@@ -6,11 +6,11 @@
 
 import SwiftUI
 
+
+// Fixed UI
 struct DiagnosticView: View {
     
     @State var dataDTC = DTCData(system: "", fault: "")
-    
-    @State var dtcURL = String()
     
     @State var searchDTC = String()
     
@@ -20,45 +20,44 @@ struct DiagnosticView: View {
     var body: some View {
         
         
+        NavigationView {
         
-        
-        ScrollView {
-            
-            Text("DTC Decoder")
-                .font(.system(size: 20))
-                .padding(.top, 50)
-                .padding(.bottom, 50)
-            
-            Text("\(dtcURL)")
-                .onTapGesture {
-                    let url = URL(string: dtcURL)
-                    guard let  DTCUrl = url, UIApplication.shared.canOpenURL(DTCUrl) else {return}
-                    UIApplication.shared.open(DTCUrl)
+            ScrollView {
+              
+                
+                // refactored code and created group for the VIN, DTC, and the fetchAPI() button
+                
+                VStack(alignment: .center) {
+                    HStack {
+               
+                            TextField("Enter Your VIN", text: $searchVIN)
+                                .multilineTextAlignment(.center)
+                            
+                            TextField("Enter Your DTC", text: $searchDTC)
+                                .multilineTextAlignment(.center)
+                        
+                    }
+                        
+                        Button("Fetch Data"){fetchAPI()}
+                        .padding(.horizontal, 16)
+                        .frame(height: 36)
+                        .background(Color(UIColor.systemGreen))
+                        .foregroundColor(Color.white)
+                        .cornerRadius(18)
+                        .padding(.trailing, 30)
+                           
+                    
                 }
-            
-            // refactored code and created group for the VIN, DTC, and the fetchAPI() button
-            Group {
-                TextField("Enter Your VIN", text: $searchVIN)
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 35)
                 
-                TextField("Enter Your DTC", text: $searchDTC)
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 35)
-                
-                Button("Fetch Data"){fetchAPI()}
-                    .padding(.top, 30)
-                    .padding(.bottom, 65)
-            }
-            
-            // Refactored Group, This data is what the user will get from the API
-            Group {
-                Text("System:")
-                Text("\(dataDTC.system)")
-                    .padding(.bottom, 15)
-                Text("Fault:")
-                Text("\(dataDTC.fault)")
-                    .padding(.bottom, 15)
+                GroupBox(label: HeaderView(labelText: "Diagnostic", labelImage: "info.circle")) {
+                    
+                    DataRowView(title: "System", data: dataDTC.system)
+        
+                    DataRowView(title: "Fault", data: dataDTC.fault)
+                    
+                }.padding()
+                    .navigationTitle("DTC Decoder")
+               
             }
         }
     }
