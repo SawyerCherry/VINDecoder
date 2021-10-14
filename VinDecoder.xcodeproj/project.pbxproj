@@ -25,6 +25,8 @@
 		F27138AF2704E6F1006FDBBD /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27138AE2704E6F1006FDBBD /* ScannerView.swift */; };
 		F27138B12704E722006FDBBD /* ScannedVINModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27138B02704E722006FDBBD /* ScannedVINModel.swift */; };
 		F27138B32704E7DF006FDBBD /* VINRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27138B22704E7DF006FDBBD /* VINRecognition.swift */; };
+		F2B2106B2717A4F2008B42A5 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2106A2717A4F2008B42A5 /* HeaderView.swift */; };
+		F2B2106D2717A5B9008B42A5 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2106C2717A5B9008B42A5 /* RowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		F27138AE2704E6F1006FDBBD /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		F27138B02704E722006FDBBD /* ScannedVINModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedVINModel.swift; sourceTree = "<group>"; };
 		F27138B22704E7DF006FDBBD /* VINRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VINRecognition.swift; sourceTree = "<group>"; };
+		F2B2106A2717A4F2008B42A5 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		F2B2106C2717A5B9008B42A5 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,18 +79,20 @@
 		F2033EC027160C6B0099E1BA /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				F2033EC7271678F30099E1BA /* Buttons */,
+				F2033EC7271678F30099E1BA /* Elements */,
 				F2033EB727160B9F0099E1BA /* Onboarding Cards */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
 		};
-		F2033EC7271678F30099E1BA /* Buttons */ = {
+		F2033EC7271678F30099E1BA /* Elements */ = {
 			isa = PBXGroup;
 			children = (
 				F2033EC52716786F0099E1BA /* StartButtonView.swift */,
+				F2B2106A2717A4F2008B42A5 /* HeaderView.swift */,
+				F2B2106C2717A5B9008B42A5 /* RowView.swift */,
 			);
-			path = Buttons;
+			path = Elements;
 			sourceTree = "<group>";
 		};
 		F23CCBFE260030DB00DA74BC = {
@@ -234,12 +240,14 @@
 				F2681EA7260A755800F12BE1 /* Keys.swift in Sources */,
 				F27138B32704E7DF006FDBBD /* VINRecognition.swift in Sources */,
 				F2033EC62716786F0099E1BA /* StartButtonView.swift in Sources */,
+				F2B2106B2717A4F2008B42A5 /* HeaderView.swift in Sources */,
 				F23CCC0B260030DB00DA74BC /* VinDecoderApp.swift in Sources */,
 				F2033EB927160BB60099E1BA /* WelcomeCardView.swift in Sources */,
 				F26767B326044623006A6EF1 /* DiagnosticView.swift in Sources */,
 				F26767B02604453E006A6EF1 /* DiagnosticData.swift in Sources */,
 				F27138B12704E722006FDBBD /* ScannedVINModel.swift in Sources */,
 				F2033EBB27160BD90099E1BA /* InfoCardView.swift in Sources */,
+				F2B2106D2717A5B9008B42A5 /* RowView.swift in Sources */,
 				F2033EBD27160BEE0099E1BA /* TutorialCardView.swift in Sources */,
 				F23CCC1B2600576900DA74BC /* VehicleData.swift in Sources */,
 				F2033EC427160D700099E1BA /* InfoView.swift in Sources */,

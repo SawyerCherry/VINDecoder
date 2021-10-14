@@ -23,13 +23,17 @@ struct ReadyCardView: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 1), radius: 2, x: 2, y: 2)
+                    .foregroundColor(.black)
                 
                 Text("Ready to decode your VIN?")
                     .font(.title)
+                    .foregroundColor(.black)
                 
                 Text("You can always return to these pages from the Info Tab in the App.")
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
+                    .foregroundColor(.black)
+                
                 StartButtonView()
             }
         }
@@ -40,7 +44,7 @@ struct ReadyCardView: View {
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         
-        .background(LinearGradient(gradient: Gradient(colors: [Color("indigo"), Color("baby")]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: [Color("baby"), Color("indigo")]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
         .padding(.top)
         .padding()
