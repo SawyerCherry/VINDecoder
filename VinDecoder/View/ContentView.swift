@@ -88,7 +88,7 @@ struct ContentView: View {
         
         NavigationView {
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 
                 HStack {
                     TextField("Enter or Scan your VIN", text: $model.fullVIN)
@@ -106,70 +106,60 @@ struct ContentView: View {
                 // SwiftUI only lets you put 10 Texts in, you can put them in groups to fix this error, just split them up.
                 
                 //Regrouped Specifications
-                Group {
-                    Text("Year:")
-                    Text("\(model.data.specification.year)")
-                        .padding(.bottom, 15)
-                    Text("Make:")
-                    Text("\(model.data.specification.make)")
-                        .padding(.bottom, 15)
-                    Text("Model:")
-                    Text("\(model.data.specification.model)")
-                        .padding(.bottom, 15)
-                    Text("Trim / Edition:")
-                    Text("\(model.data.specification.trim_level)")
-                        .padding(.bottom, 15)
-                }
-                
-                //Regrouped Specifications
-                Group {
-                    Text("Engine Specifications:")
-                    Text("\(model.data.specification.engine)")
-                        .padding(.bottom, 15)
-                    Text("Transmission Type:")
-                    Text("\(model.data.specification.transmission)")
-                        .padding(.bottom, 15)
+                GroupBox(label: HeaderView(labelText: "Basic Info", labelImage: "info.circle")) {
                     
-                    Text("Style:")
-                    Text("\(model.data.specification.style)")
-                        .padding(.bottom, 15)
-                }
-                
-                //Regrouped Specifications
-                Group {
-                    Text("Manufactured In:")
-                    Text("\(model.data.specification.made_in)")
-                        .padding(.bottom, 15)
-                    Text("Anti Brake Sysyem Type:")
-                    Text("\(model.data.specification.anti_brake_system)")
-                        .padding(.bottom, 15)
-                    Text("Length of Vehicle:")
-                    Text("\(model.data.specification.overall_length)")
-                        .padding(.bottom, 15)
-                    Text("Width of Vehicle:")
-                    Text("\(model.data.specification.overall_width)")
-                        .padding(.bottom, 15)
-                }
-                
-                //Regrouped Specifications
-                Group {
-                    Text("Height of Vehicle:")
-                    Text("\(model.data.specification.overall_height)")
-                        .padding(.bottom, 15)
-                    Text("Amount of Seats:")
-                    Text("\(model.data.specification.optional_seating)")
-                        .padding(.bottom, 15)
-                    Text("Fuel Type:")
-                    Text("\(model.data.specification.fuel_type)")
-                        .padding(.bottom, 15)
-                    Text("Highway MPG:")
-                    Text("\(model.data.specification.highway_mileage)")
-                        .padding(.bottom, 15)
-                    Text("City MPG:")
-                    Text("\(model.data.specification.city_mileage)")
-                        .padding(.bottom, 15)
+                    DataRowView(title: "Year", data: model.data.specification.year)
+        
+                    DataRowView(title: "Make", data: model.data.specification.make)
+             
+                    DataRowView(title: "Model", data: model.data.specification.model)
+                  
+                    DataRowView(title: "Trim Level", data: model.data.specification.trim_level)
                     
-                }
+                }.padding()
+                
+                //Regrouped Specifications
+                GroupBox(label: HeaderView(labelText: "Mechanical", labelImage: "info.circle")) {
+                    
+                    DataRowView(title: "Engine", data: model.data.specification.engine)
+                    
+                    DataRowView(title: "Transmission", data: model.data.specification.transmission)
+                    
+                    DataRowView(title: "Drive Type", data: model.data.specification.drive_type)
+                    
+                    DataRowView(title: "Anti Brake System", data: model.data.specification.anti_brake_system)
+                    
+                }.padding()
+                
+                GroupBox(label: HeaderView(labelText: "Fuel", labelImage: "info.circle")) {
+                    
+                    DataRowView(title: "Fuel Type", data: model.data.specification.fuel_type)
+                    
+                    DataRowView(title: "Highway MPG", data: model.data.specification.highway_mileage)
+                    
+                    DataRowView(title: "City MPG", data: model.data.specification.city_mileage)
+                    
+                }.padding()
+                
+                GroupBox(label: HeaderView(labelText: "Specifications", labelImage: "info.circle")) {
+                    
+                    DataRowView(title: "Style", data: model.data.specification.style)
+                    
+                    DataRowView(title: "Seating", data: model.data.specification.optional_seating)
+                    
+                    DataRowView(title: "Made In", data: model.data.specification.made_in)
+                    
+                }.padding()
+                //Regrouped Specifications
+                GroupBox(label: HeaderView(labelText: "Measurements", labelImage: "info.circle")) {
+                  
+                    DataRowView(title: "Length", data: model.data.specification.overall_length)
+                    
+                    DataRowView(title: "Width", data: model.data.specification.overall_width)
+                    
+                    DataRowView(title: "Height", data: model.data.specification.overall_height)
+                }.padding()
+                
             }
             .navigationTitle("Vin Decoder")
             .navigationBarItems(trailing: Button(action: {
@@ -229,5 +219,6 @@ struct dataStructure: Decodable {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
     }
 }
