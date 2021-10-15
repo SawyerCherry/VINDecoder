@@ -24,11 +24,10 @@ struct DiagnosticView: View {
         
             ScrollView {
               
-                
                 // refactored code and created group for the VIN, DTC, and the fetchAPI() button
                 
                 VStack(alignment: .center) {
-                    HStack {
+                    HStack(alignment: .center) {
                
                             TextField("Enter Your VIN", text: $searchVIN)
                                 .multilineTextAlignment(.center)
@@ -36,7 +35,7 @@ struct DiagnosticView: View {
                             TextField("Enter Your DTC", text: $searchDTC)
                                 .multilineTextAlignment(.center)
                         
-                    }
+                    }.padding(.bottom)
                         
                         Button("Fetch Data"){fetchAPI()}
                         .padding(.horizontal, 16)
@@ -44,10 +43,9 @@ struct DiagnosticView: View {
                         .background(Color(UIColor.systemGreen))
                         .foregroundColor(Color.white)
                         .cornerRadius(18)
-                        .padding(.trailing, 30)
-                           
+                        .padding()
                     
-                }
+                }.padding(.top)
                 
                 GroupBox(label: HeaderView(labelText: "Diagnostic", labelImage: "info.circle")) {
                     
