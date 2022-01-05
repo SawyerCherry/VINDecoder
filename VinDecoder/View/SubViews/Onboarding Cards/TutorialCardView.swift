@@ -107,7 +107,8 @@ struct TutorialCardView: View {
         
         .background(LinearGradient(gradient: Gradient(colors: [Color("baby"), Color("honolulu")]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
-        .padding()
+        .padding(.top)
+        .padding(.horizontal)
     }
 }
 

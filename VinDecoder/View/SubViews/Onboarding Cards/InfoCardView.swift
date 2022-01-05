@@ -99,7 +99,8 @@ struct InfoCardView: View {
         
         .background(LinearGradient(gradient: Gradient(colors: [Color("indigo"), Color("honolulu")]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
-        .padding()
+        .padding(.top)
+        .padding(.horizontal)
         
         
         

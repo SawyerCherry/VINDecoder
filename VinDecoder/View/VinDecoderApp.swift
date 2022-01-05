@@ -36,13 +36,22 @@ struct VinDecoderApp: App {
                                 .foregroundColor(Color(UIColor.systemGreen))
                         }.tag(1)
                     
+                    
+                    CreateView()
+                        .tabItem {
+                            Image(systemName: "tray.full.fill")
+                                .foregroundColor(Color("honolulu"))
+                            Text("My Data")
+                                .foregroundColor(Color("honolulu"))
+                        }.tag(2)
+                    
                     InfoView()
                         .tabItem {
                             Image(systemName: "info.circle")
                                 .foregroundColor(Color(UIColor.systemGreen))
                             Text("Information")
                                 .foregroundColor(Color(UIColor.systemGreen))
-                        }.tag(2)
+                        }.tag(3)
                 }
             }
         }

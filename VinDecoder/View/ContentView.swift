@@ -100,7 +100,7 @@ struct ContentView: View {
                     Button("Fetch Data"){model.fetchCarData(from: model.fullVIN)}
                         .padding(.horizontal, 16)
                         .frame(height: 36)
-                        .background(Color(UIColor.systemGreen))
+                        .background(Color("honolulu"))
                         .foregroundColor(Color.white)
                         .cornerRadius(18)
                   
@@ -180,7 +180,7 @@ struct ContentView: View {
                 }
                 .padding(.horizontal, 16)
                 .frame(height: 36)
-                .background(Color(UIColor.systemGreen))
+                .background(Color("honolulu"))
                 .cornerRadius(18)
             }))
             .padding()

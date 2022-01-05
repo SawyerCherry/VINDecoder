@@ -40,7 +40,7 @@ struct DiagnosticView: View {
                         Button("Fetch Data"){fetchAPI()}
                         .padding(.horizontal, 16)
                         .frame(height: 36)
-                        .background(Color(UIColor.systemGreen))
+                        .background(Color("honolulu"))
                         .foregroundColor(Color.white)
                         .cornerRadius(18)
                         .padding()

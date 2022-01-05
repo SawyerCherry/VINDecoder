@@ -46,8 +46,9 @@ struct ReadyCardView: View {
         
         .background(LinearGradient(gradient: Gradient(colors: [Color("baby"), Color("indigo")]), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
+       
         .padding(.top)
-        .padding()
+        .padding(.horizontal)
         
         
         
