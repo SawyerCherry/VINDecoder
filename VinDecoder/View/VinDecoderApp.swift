@@ -43,7 +43,6 @@ struct VinDecoderApp: App {
                             Text("Information")
                                 .foregroundColor(Color(UIColor.systemGreen))
                         }.tag(2)
-
                 }
             }
         }

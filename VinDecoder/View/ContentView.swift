@@ -85,7 +85,7 @@ struct ContentView: View {
     @State private var showScanner = false
     @State private var isRecognizing = false
     
-  
+   
     @StateObject var model = ContentViewModel()
     
     var body: some View {
