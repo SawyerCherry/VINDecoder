@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MaintenanceLog" representedClassName="MaintenanceLog" syncable="YES" codeGenerationType="class">
+        <attribute name="cost" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="vehicle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Vehicle" inverseName="maintenanceLogs" inverseEntity="Vehicle"/>
+    </entity>
     <entity name="Vehicle" representedClassName="Vehicle" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="driveType" optional="YES" attributeType="String"/>
         <attribute name="engine" optional="YES" attributeType="String"/>
         <attribute name="make" optional="YES" attributeType="String"/>
@@ -11,13 +19,10 @@
         <attribute name="trim" optional="YES" attributeType="String"/>
         <attribute name="vin" optional="YES" attributeType="String"/>
         <attribute name="year" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-    </entity>
-    <entity name="VIN" representedClassName="VIN" syncable="YES" codeGenerationType="class">
-        <attribute name="nickName" optional="YES" attributeType="String"/>
-        <attribute name="vin" optional="YES" attributeType="String"/>
+        <relationship name="maintenanceLogs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MaintenanceLog" inverseName="vehicle" inverseEntity="MaintenanceLog"/>
     </entity>
     <elements>
-        <element name="Vehicle" positionX="-63" positionY="-18" width="128" height="179"/>
-        <element name="VIN" positionX="-54" positionY="-9" width="128" height="59"/>
+        <element name="Vehicle" positionX="-1689.94921875" positionY="560.12890625" width="128" height="223"/>
+        <element name="MaintenanceLog" positionX="-1434.55078125" positionY="698.42578125" width="128" height="118"/>
     </elements>
 </model>

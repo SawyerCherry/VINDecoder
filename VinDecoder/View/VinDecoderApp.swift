@@ -83,7 +83,7 @@ struct PersistenceController {
         })
     }
     
-    func addVehicle(name: String, year: Int, make: String, model: String, engine: String, titleStatus: String, vin: String, driveType: String, transmission: String, trim: String) {
+    func addVehicle(name: String, year: Int, make: String, model: String, engine: String, titleStatus: String, vin: String, driveType: String, transmission: String, trim: String, color: String) {
         withAnimation {
             let newVehicle = Vehicle(context: container.viewContext)
             
@@ -97,25 +97,33 @@ struct PersistenceController {
             newVehicle.transmission = transmission
             newVehicle.titleStatus = titleStatus
             newVehicle.vin = vin
-            
+            newVehicle.color = color
             save()
         }
-        
     }
     
     
-    func addVIN(nickName: String, vin: String) {
+    func addMaintenanceLog(cost: Double, date: String, notes: String, title: String, into vehicle: Vehicle) {
         withAnimation {
-            let newVIN = VIN(context: container.viewContext)
-            
-            newVIN.nickName = nickName
-            newVIN.vin = vin
-            
+            let newLog = MaintenanceLog(context: container.viewContext)
+            newLog.cost = cost
+            newLog.date = date
+            newLog.title = title
+            newLog.notes = notes
+            vehicle.addToMaintenanceLogs(newLog)
             save()
         }
     }
     
-    
+    func findVehicles() -> Vehicle? {
+        let fetch = Vehicle.fetchRequest()
+        fetch.sortDescriptors = [NSSortDescriptor(keyPath: \Vehicle.name, ascending: false)]
+        fetch.fetchLimit = 1
+        guard let result = try? container.viewContext.fetch(fetch).first else {
+            return nil
+        }
+        return result
+    }
     
     private func save() {
         do {
