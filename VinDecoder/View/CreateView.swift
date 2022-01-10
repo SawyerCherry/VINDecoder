@@ -34,7 +34,7 @@ struct CreateView: View {
                 NavigationLink("Add Vehicle", destination: AddVehicleView())
                 
                 NavigationLink("Add Maintenance Log", destination: AddMaintenenceLogView())
-                    .disabled(model.numberOfVehicles == 0)
+                    
             }
             .navigationTitle("Add/View")
             

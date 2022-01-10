@@ -74,6 +74,7 @@ struct AddMaintenenceLogView: View {
                         .padding(.horizontal, 16)
                         .frame(width: 85, height: 45)
                         .background(Color("honolulu"))
+                        .foregroundColor(Color.black)
                         .cornerRadius(18)
 
                 }.padding(.top, 100)
