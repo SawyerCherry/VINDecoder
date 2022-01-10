@@ -125,6 +125,11 @@ struct PersistenceController {
         return result
     }
     
+    func numberofVehicles() -> Int {
+        let fetch = Vehicle.fetchRequest()
+        return (try? container.viewContext.fetch(fetch).count) ?? 0
+    }
+    
     private func save() {
         do {
             try container.viewContext.save()
