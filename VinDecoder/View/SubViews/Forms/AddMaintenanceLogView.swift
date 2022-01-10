@@ -1,5 +1,5 @@
 //
-//  AddMaintenanceLogView.swift
+//  AddVehicleView.swift
 //  VinDecoder
 //
 //  Created by Sawyer Cherry on 1/10/22.
@@ -7,14 +7,49 @@
 
 import SwiftUI
 
-struct AddMaintenanceLogView: View {
+struct AddMaintenenceLogView: View {
+    
+    //: MARK: - Properties
+    @State var title: String = ""
+    @State var notes: String = ""
+    @State var cost: Double = 0.00
+    @State var date: String = ""
+   
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                HStack {
+                    Text("Title")
+                    Spacer()
+                    TextField("enter", text: $title)
+                        .fixedSize()
+                }
+                
+                HStack {
+                    Text("Notes")
+                    Spacer()
+                    TextField("enter", text: $notes)
+                        .fixedSize()
+                }
+                
+                HStack {
+                    Text("Cost")
+                    Spacer()
+                    TextField("enter", value: $cost, format: .number)
+                        .fixedSize()
+                }
+                
+                HStack {
+                    Text("date")
+                    Spacer()
+                    TextField("enter", text: $date)
+                        .fixedSize()
+                }
+            }.navigationTitle("Add Maintenance Log")
+        }
     }
 }
 
-struct AddMaintenanceLogView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddMaintenanceLogView()
-    }
-}
+

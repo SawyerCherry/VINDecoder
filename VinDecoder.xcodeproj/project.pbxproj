@@ -14,8 +14,8 @@
 		F2033EC227160CD30099E1BA /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2033EC127160CD30099E1BA /* OnboardingView.swift */; };
 		F2033EC427160D700099E1BA /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2033EC327160D700099E1BA /* InfoView.swift */; };
 		F2033EC62716786F0099E1BA /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2033EC52716786F0099E1BA /* StartButtonView.swift */; };
-		F212CFFE278C944300401AE7 /* AddVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212CFFD278C944300401AE7 /* AddVehicleView.swift */; };
-		F212D000278C94A200401AE7 /* AddMaintenanceLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212CFFF278C94A200401AE7 /* AddMaintenanceLogView.swift */; };
+		F212CFFE278C944300401AE7 /* AddMaintenanceLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212CFFD278C944300401AE7 /* AddMaintenanceLogView.swift */; };
+		F212D000278C94A200401AE7 /* AddVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212CFFF278C94A200401AE7 /* AddVehicleView.swift */; };
 		F23CCC0B260030DB00DA74BC /* VinDecoderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CCC0A260030DB00DA74BC /* VinDecoderApp.swift */; };
 		F23CCC0D260030DB00DA74BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CCC0C260030DB00DA74BC /* ContentView.swift */; };
 		F23CCC0F260030DB00DA74BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23CCC0E260030DB00DA74BC /* Assets.xcassets */; };
@@ -42,8 +42,8 @@
 		F2033EC127160CD30099E1BA /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F2033EC327160D700099E1BA /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		F2033EC52716786F0099E1BA /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
-		F212CFFD278C944300401AE7 /* AddVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleView.swift; sourceTree = "<group>"; };
-		F212CFFF278C94A200401AE7 /* AddMaintenanceLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMaintenanceLogView.swift; sourceTree = "<group>"; };
+		F212CFFD278C944300401AE7 /* AddMaintenanceLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMaintenanceLogView.swift; sourceTree = "<group>"; };
+		F212CFFF278C94A200401AE7 /* AddVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleView.swift; sourceTree = "<group>"; };
 		F23CCC07260030DB00DA74BC /* VinDecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinDecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23CCC0A260030DB00DA74BC /* VinDecoderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinDecoderApp.swift; sourceTree = "<group>"; };
 		F23CCC0C260030DB00DA74BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,8 +110,8 @@
 		F212CFFC278C943000401AE7 /* Forms */ = {
 			isa = PBXGroup;
 			children = (
-				F212CFFD278C944300401AE7 /* AddVehicleView.swift */,
-				F212CFFF278C94A200401AE7 /* AddMaintenanceLogView.swift */,
+				F212CFFD278C944300401AE7 /* AddMaintenanceLogView.swift */,
+				F212CFFF278C94A200401AE7 /* AddVehicleView.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -264,7 +264,7 @@
 				F24ECFC9278602CC00FE0BBF /* CreateView.swift in Sources */,
 				F27138B32704E7DF006FDBBD /* VINRecognition.swift in Sources */,
 				F2033EC62716786F0099E1BA /* StartButtonView.swift in Sources */,
-				F212CFFE278C944300401AE7 /* AddVehicleView.swift in Sources */,
+				F212CFFE278C944300401AE7 /* AddMaintenanceLogView.swift in Sources */,
 				F2B2106B2717A4F2008B42A5 /* HeaderView.swift in Sources */,
 				F23CCC0B260030DB00DA74BC /* VinDecoderApp.swift in Sources */,
 				F2033EB927160BB60099E1BA /* WelcomeCardView.swift in Sources */,
@@ -277,7 +277,7 @@
 				F2033EBD27160BEE0099E1BA /* TutorialCardView.swift in Sources */,
 				F23CCC1B2600576900DA74BC /* VehicleData.swift in Sources */,
 				F2033EC427160D700099E1BA /* InfoView.swift in Sources */,
-				F212D000278C94A200401AE7 /* AddMaintenanceLogView.swift in Sources */,
+				F212D000278C94A200401AE7 /* AddVehicleView.swift in Sources */,
 				F2033EC227160CD30099E1BA /* OnboardingView.swift in Sources */,
 				F2B2106F2717D57D008B42A5 /* DataRowView.swift in Sources */,
 			);

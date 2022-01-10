@@ -1,5 +1,5 @@
 //
-//  AddVehicleView.swift
+//  AddMaintenanceLogView.swift
 //  VinDecoder
 //
 //  Created by Sawyer Cherry on 1/10/22.
@@ -13,8 +13,3 @@ struct AddVehicleView: View {
     }
 }
 
-struct AddVehicleView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddVehicleView()
-    }
-}
