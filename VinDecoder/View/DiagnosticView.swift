@@ -23,8 +23,6 @@ struct DiagnosticView: View {
         NavigationView {
         
             ScrollView {
-              
-                // refactored code and created group for the VIN, DTC, and the fetchAPI() button
                 
                 VStack(alignment: .center) {
                     HStack(alignment: .center) {

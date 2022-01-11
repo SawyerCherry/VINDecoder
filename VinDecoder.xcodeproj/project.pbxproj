@@ -16,6 +16,7 @@
 		F2033EC62716786F0099E1BA /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2033EC52716786F0099E1BA /* StartButtonView.swift */; };
 		F212CFFE278C944300401AE7 /* AddMaintenanceLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212CFFD278C944300401AE7 /* AddMaintenanceLogView.swift */; };
 		F212D000278C94A200401AE7 /* AddVehicleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212CFFF278C94A200401AE7 /* AddVehicleView.swift */; };
+		F212D002278DE8E200401AE7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F212D001278DE8E200401AE7 /* DetailView.swift */; };
 		F23CCC0B260030DB00DA74BC /* VinDecoderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CCC0A260030DB00DA74BC /* VinDecoderApp.swift */; };
 		F23CCC0D260030DB00DA74BC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F23CCC0C260030DB00DA74BC /* ContentView.swift */; };
 		F23CCC0F260030DB00DA74BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F23CCC0E260030DB00DA74BC /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		F2033EC52716786F0099E1BA /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
 		F212CFFD278C944300401AE7 /* AddMaintenanceLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMaintenanceLogView.swift; sourceTree = "<group>"; };
 		F212CFFF278C94A200401AE7 /* AddVehicleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVehicleView.swift; sourceTree = "<group>"; };
+		F212D001278DE8E200401AE7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		F23CCC07260030DB00DA74BC /* VinDecoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinDecoder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F23CCC0A260030DB00DA74BC /* VinDecoderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinDecoderApp.swift; sourceTree = "<group>"; };
 		F23CCC0C260030DB00DA74BC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				F27138AE2704E6F1006FDBBD /* ScannerView.swift */,
 				F2033EC127160CD30099E1BA /* OnboardingView.swift */,
 				F24ECFC8278602CC00FE0BBF /* CreateView.swift */,
+				F212D001278DE8E200401AE7 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2033EBF27160C010099E1BA /* ReadyCardView.swift in Sources */,
+				F212D002278DE8E200401AE7 /* DetailView.swift in Sources */,
 				F23CCC0D260030DB00DA74BC /* ContentView.swift in Sources */,
 				F27138AF2704E6F1006FDBBD /* ScannerView.swift in Sources */,
 				F2681EA7260A755800F12BE1 /* Keys.swift in Sources */,

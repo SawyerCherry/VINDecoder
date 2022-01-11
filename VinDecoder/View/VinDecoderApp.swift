@@ -26,7 +26,7 @@ struct VinDecoderApp: App {
                                 .foregroundColor(Color(UIColor.systemGreen))
                             Text("VIN Decoder")
                                 .foregroundColor(Color(UIColor.systemGreen))
-                        }.tag(0)
+                        }
                     
                     DiagnosticView()
                         .tabItem {
@@ -34,16 +34,24 @@ struct VinDecoderApp: App {
                                 .foregroundColor(Color(UIColor.systemGreen))
                             Text("DTC Decoder")
                                 .foregroundColor(Color(UIColor.systemGreen))
-                        }.tag(1)
+                        }
                     
                     
                     CreateView()
+                        .tabItem {
+                            Image(systemName: "doc.fill.badge.plus")
+                                .foregroundColor(Color("honolulu"))
+                            Text("Create")
+                                .foregroundColor(Color("honolulu"))
+                        }
+                    
+                    DetailView()
                         .tabItem {
                             Image(systemName: "tray.full.fill")
                                 .foregroundColor(Color("honolulu"))
                             Text("My Data")
                                 .foregroundColor(Color("honolulu"))
-                        }.tag(2)
+                        }
                     
                     InfoView()
                         .tabItem {
@@ -51,7 +59,7 @@ struct VinDecoderApp: App {
                                 .foregroundColor(Color(UIColor.systemGreen))
                             Text("Information")
                                 .foregroundColor(Color(UIColor.systemGreen))
-                        }.tag(3)
+                        }
                 }
                 
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
@@ -83,7 +91,7 @@ struct PersistenceController {
         })
     }
     
-    func addVehicle(name: String, year: Int, make: String, model: String, engine: String, titleStatus: String, vin: String, driveType: String, transmission: String, trim: String, color: String) {
+    func addVehicle(name: String, year: String, make: String, model: String, engine: String, titleStatus: String, vin: String, driveType: String, transmission: String, trim: String, color: String) {
         withAnimation {
             let newVehicle = Vehicle(context: container.viewContext)
             
@@ -91,7 +99,7 @@ struct PersistenceController {
             newVehicle.make = make
             newVehicle.driveType = driveType
             newVehicle.model = model
-            newVehicle.year = Int16(year)
+            newVehicle.year = year
             newVehicle.engine = engine
             newVehicle.trim = trim
             newVehicle.transmission = transmission

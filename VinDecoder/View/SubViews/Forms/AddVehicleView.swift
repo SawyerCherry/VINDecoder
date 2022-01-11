@@ -15,7 +15,7 @@ struct AddVehicleView: View {
     @State var name: String = ""
     @State var make: String = ""
     @State var model: String = ""
-    @State var year: Int = 0
+    @State var year: String = ""
     @State var color: String = ""
     @State var engine: String = ""
     @State var transmission: String = ""
@@ -27,89 +27,114 @@ struct AddVehicleView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    Text("Name")
-                    Spacer()
-                    TextField("enter", text: $name)
-                }.padding(.horizontal, 100)
                 
-                HStack {
-                    Text("Make")
-                    Spacer()
-                    TextField("enter", text: $make)
-                }.padding(.horizontal, 100)
-                
-                HStack {
-                    Text("Model")
-                    Spacer()
-                    TextField("enter", text: $model)
-                }.padding(.horizontal, 100)
-                
-                HStack {
-                    Text("Year")
-                    Spacer()
-                    TextField("enter", value: $year, format: .number)
-                }.padding(.horizontal, 100)
-                
-                HStack {
-                    Text("Color")
-                    Spacer()
-                    TextField("enter", text: $color)
-                }.padding(.horizontal, 100)
-                
-                HStack {
-                    Text("Engine")
-                    Spacer()
-                    TextField("enter", text: $engine)
-                }.padding(.horizontal, 100)
-                
-                HStack {
-                    Text("Transmission")
-                    Spacer()
-                    TextField("enter", text: $transmission)
-                }.padding(.horizontal, 100)
-                
-                HStack {
-                    Text("Drive Type")
-                    Spacer()
-                    TextField("enter", text: $driveType)
-                }.padding(.horizontal, 100)
-                
-                HStack {
-                    Text("Trim")
-                    Spacer()
-                    TextField("enter", text: $trim)
-                }.padding(.horizontal, 100)
-                
-                Group {
+                Form {
                     HStack {
-                        Text("Title Status")
+                        Text("Name")
+                            .padding(.trailing, 23)
                         Spacer()
-                        TextField("enter", text: $titleStatus)
-                    }.padding(.horizontal, 100)
+                        TextField("enter", text: $name)
+                    }
                     
                     HStack {
-                        Text("VIN")
+                        Text("Make")
+                            .padding(.trailing, 27)
                         Spacer()
-                        TextField("enter", text: $vin)
-                    }.padding(.horizontal, 100)
-                
-                    Button {
-                        PersistenceController.shared.addVehicle(name: name, year: year, make: make, model: model, engine: engine, titleStatus: titleStatus, vin: vin, driveType: driveType, transmission: transmission, trim: trim, color: color)
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        Text("Save")
-                            .padding(.horizontal, 16)
-                            .frame(width: 85, height: 45)
-                            .background(Color("saddleBrown"))
-                            .foregroundColor(Color.white)
-                            .cornerRadius(18)
+                        TextField("enter", text: $make)
                     }
-                }//: Group
-                
-                
+                    
+                    HStack {
+                        Text("Model")
+                            .padding(.trailing, 22)
+                        Spacer()
+                        TextField("enter", text: $model)
+                    }
+                    
+                    HStack {
+                        Text("Year")
+                            .padding(.trailing, 35)
+                        Spacer()
+                        TextField("enter", text: $year)
+                            .keyboardType(.numberPad)
+                    }
+                    
+                    HStack {
+                        Text("Color")
+                            .padding(.trailing, 27)
+                        Spacer()
+                        TextField("enter", text: $color)
+                    }
+                    
+                    HStack {
+                        Text("Engine")
+                            .padding(.trailing, 17)
+                        Spacer()
+                        TextField("enter", text: $engine)
+                    }
+                    
+                    HStack {
+                        Text("Transmission")
+                            .padding(.trailing)
+                        Spacer()
+                        TextField("enter", text: $transmission)
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Text("Drive Type")
+                            .padding(.trailing)
+                        Spacer()
+                        TextField("enter", text: $driveType)
+                    }
+                    
+                    HStack {
+                        Text("Trim")
+                            .padding(.trailing, 33)
+                        Spacer()
+                        TextField("enter", text: $trim)
+                    }
+                    
+                    Group {
+                        HStack {
+                            Text("Title Status")
+                                .padding(.trailing)
+                            Spacer()
+                            TextField("enter", text: $titleStatus)
+                        }
+                        
+                        HStack {
+                            Text("VIN")
+                                .padding(.trailing, 37)
+                            Spacer()
+                            TextField("enter", text: $vin)
+                        }
+                        HStack {
+                            Spacer()
+                            Button {
+                                PersistenceController.shared.addVehicle(name: name, year: year, make: make, model: model, engine: engine, titleStatus: titleStatus, vin: vin, driveType: driveType, transmission: transmission, trim: trim, color: color)
+                                presentationMode.wrappedValue.dismiss()
+                            } label: {
+                                Text("Save")
+                                    .padding(.horizontal, 16)
+                                    .frame(width: 85, height: 45)
+                                    .background(Color("honolulu"))
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(18)
+                            }
+                            Spacer()
+                        }.padding()
+                    }//: Group
+                }//: Form
+                .padding(.top)
             }.navigationTitle("Add Vehicle")
         }
     }
 }
 
+
+struct AddVehicleView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddVehicleView()
+            .preferredColorScheme(.dark)
+    }
+}
