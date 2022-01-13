@@ -22,9 +22,6 @@ class CreateViewModel: ObservableObject {
     }
 }
 
-
-
-
 struct CreateView: View {
     //: MARK: - Properties
     
@@ -44,27 +41,7 @@ struct CreateView: View {
         NavigationView {
             List {
                 ForEach(vehicles) { vehicle in
-                        GroupBox(label: HeaderView(labelText: vehicle.name!, labelImage: "fingerprint")) {
-                            Divider()
-                                HStack {
-                                    Text("\(vehicle.year!) \(vehicle.make!) \(vehicle.model!)")
-                                    Spacer()
-                                    
-                                    NavigationLink(destination: VehicleDetailView(vehicle: vehicle), isActive: $showingVehicleDetail) {
-                                        Button(action: {
-                                            showingVehicleDetail = true
-                                        }) {
-                                            Text("Details")
-                                                .padding(.horizontal, 16)
-                                                .frame(height: 36)
-                                                .background(Color("honolulu"))
-                                                .foregroundColor(Color.white)
-                                                .cornerRadius(18)
-                                                .padding()
-                                        }
-                                    }
-                                }
-                        }.padding()
+                    VehicleView(vehicle: vehicle)
                 }
                 .background(Color("honolulu"))
                 .cornerRadius(8)
@@ -94,6 +71,37 @@ struct CreateView: View {
         }
     }
 }
+
+struct VehicleView: View {
+    @ObservedObject var vehicle: Vehicle
+  
+    @State private var showingVehicleDetail = false
+
+    var body: some View {
+        GroupBox(label: HeaderView(labelText: vehicle.name!, labelImage: "fingerprint")) {
+            Divider()
+                HStack {
+                    Text("\(vehicle.year!) \(vehicle.make!) \(vehicle.model!)")
+                    Spacer()
+                    
+                    NavigationLink(destination: VehicleDetailView(vehicle: vehicle), isActive: $showingVehicleDetail) {
+                        Button(action: {
+                            showingVehicleDetail = true
+                        }) {
+                            Text("Details")
+                                .padding(.horizontal, 16)
+                                .frame(height: 36)
+                                .background(Color("honolulu"))
+                                .foregroundColor(Color.white)
+                                .cornerRadius(18)
+                                .padding()
+                        }
+                    }
+                }
+        }.padding()
+    }
+}
+
 
 struct CreateView_Previews: PreviewProvider {
     static var previews: some View {

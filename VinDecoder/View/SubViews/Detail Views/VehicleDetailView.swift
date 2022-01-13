@@ -24,6 +24,7 @@ class VehicleDetailViewModel: ObservableObject {
 
 struct VehicleDetailView: View {
     @ObservedObject var vehicle: Vehicle
+    
     @State private var showingAddMaintenanceLog: Bool = false
     @State private var showingMaintenceLogDetails: Bool = false
     @StateObject var model = VehicleDetailViewModel()
