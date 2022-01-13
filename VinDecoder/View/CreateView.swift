@@ -23,11 +23,6 @@ class CreateViewModel: ObservableObject {
 }
 
 
-//extension Herd {
-//    var getLivestockOnFarm: [Livestock] {
-//        return livestockInHerd!.allObjects as! [Livestock]
-//    }
-//}
 
 
 struct CreateView: View {
@@ -49,33 +44,28 @@ struct CreateView: View {
         NavigationView {
             List {
                 ForEach(vehicles) { vehicle in
-                    GroupBox(label: HeaderView(labelText: vehicle.name!, labelImage: "fingerprint")) {
-                        
-                        Divider()
-                        VStack {
-                            HStack {
-                                Text("\(vehicle.year!) \(vehicle.make!) \(vehicle.model!)")
-                                Spacer()
-                                
-                                NavigationLink(destination: VehicleDetailView(vehicle: vehicle), isActive: $showingVehicleDetail) {
-                                    Button(action: {
-                                        showingVehicleDetail = true
-                                    }) {
-                                        Text("Details")
-                                            .padding(.horizontal, 16)
-                                            .frame(height: 36)
-                                            .background(Color("honolulu"))
-                                            .foregroundColor(Color.white)
-                                            .cornerRadius(18)
-                                            .padding()
-                                    }.tag(vehicle as Vehicle?)
+                        GroupBox(label: HeaderView(labelText: vehicle.name!, labelImage: "fingerprint")) {
+                            Divider()
+                                HStack {
+                                    Text("\(vehicle.year!) \(vehicle.make!) \(vehicle.model!)")
+                                    Spacer()
+                                    
+                                    NavigationLink(destination: VehicleDetailView(vehicle: vehicle), isActive: $showingVehicleDetail) {
+                                        Button(action: {
+                                            showingVehicleDetail = true
+                                        }) {
+                                            Text("Details")
+                                                .padding(.horizontal, 16)
+                                                .frame(height: 36)
+                                                .background(Color("honolulu"))
+                                                .foregroundColor(Color.white)
+                                                .cornerRadius(18)
+                                                .padding()
+                                        }
+                                    }
                                 }
-                            }
-                        }
-                    }.padding()
-                        .tag(vehicle as Vehicle?)
+                        }.padding()
                 }
-            
                 .background(Color("honolulu"))
                 .cornerRadius(8)
             }

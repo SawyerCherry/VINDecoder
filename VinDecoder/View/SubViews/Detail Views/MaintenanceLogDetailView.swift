@@ -7,14 +7,24 @@
 
 import SwiftUI
 
+extension MaintenanceLog {
+    var getAllMaintenence: [MaintenanceLog] {
+        return vehicle!.allObjects as! [Livestock]
+    }
+}
 struct MaintenanceLogDetailView: View {
+    @ObservedObject var log: MaintenanceLog
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            ForEach(log) { log in
+                GroupBox(label: HeaderView(labelText: "Maintenence Log", labelImage: "wrench.and.screwdriver")) {
+                    HStack {
+                        
+                    }//:Stack
+                }.padding()
+            }//:Loop
+        }.navigationTitle("Maintenance Logs")
     }
 }
 
-struct MaintenanceLogDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MaintenanceLogDetailView()
-    }
-}
+

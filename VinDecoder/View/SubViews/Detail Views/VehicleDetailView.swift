@@ -89,10 +89,10 @@ struct VehicleDetailView: View {
                                 .padding()
                         }
                         
-                        .disabled(model.numberOfLogs == 0)
+                        
                             
                         
-                    }
+                    }.disabled(model.numberOfLogs == 0)
                     
                 }
                 
@@ -102,27 +102,11 @@ struct VehicleDetailView: View {
             .padding()
             
             
-            
-          
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         }//: VStack
         .navigationBarItems(trailing: Button(action: {
             showingAddMaintenanceLog = true
         }, label: {
             HStack {
-                
-                
                 Text("Log Maintenance")
                     .foregroundColor(.white)
             }
