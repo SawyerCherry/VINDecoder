@@ -45,7 +45,7 @@ struct DiagnosticView: View {
                     
                 }.padding(.top)
                 
-                GroupBox(label: HeaderView(labelText: "Diagnostic", labelImage: "info.circle")) {
+                GroupBox(label: HeaderView(labelText: "Diagnostic Data", labelImage: "info.circle")) {
                     
                     DataRowView(title: "System", data: dataDTC.system)
         

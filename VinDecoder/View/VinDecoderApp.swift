@@ -22,7 +22,7 @@ struct VinDecoderApp: App {
                 TabView {
                     ContentView()
                         .tabItem {
-                            Image(systemName: "car")
+                            Image(systemName: "touchid")
                                 .foregroundColor(Color(UIColor.systemGreen))
                             Text("VIN Decoder")
                                 .foregroundColor(Color(UIColor.systemGreen))
@@ -39,19 +39,12 @@ struct VinDecoderApp: App {
                     
                     CreateView()
                         .tabItem {
-                            Image(systemName: "doc.fill.badge.plus")
+                            Image(systemName: "car.2.fill")
                                 .foregroundColor(Color("honolulu"))
-                            Text("Create")
-                                .foregroundColor(Color("honolulu"))
-                        }
-                    
-                    DetailView()
-                        .tabItem {
-                            Image(systemName: "tray.full.fill")
-                                .foregroundColor(Color("honolulu"))
-                            Text("My Data")
+                            Text("My Vehicles")
                                 .foregroundColor(Color("honolulu"))
                         }
+                 
                     
                     InfoView()
                         .tabItem {

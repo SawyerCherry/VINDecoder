@@ -75,7 +75,6 @@ class ContentViewModel: ObservableObject {
         guard trimmed.count == 17 || trimmed.count == 12 else{
             return nil
         }
-        
         return trimmed
     }
 }

@@ -25,10 +25,10 @@ struct AddVehicleView: View {
     @State var vin: String = ""
     
     var body: some View {
-        NavigationView {
-            VStack {
-                
+     
+         
                 Form {
+                    
                     HStack {
                         Text("Name")
                             .padding(.trailing, 23)
@@ -125,10 +125,8 @@ struct AddVehicleView: View {
                         }.padding()
                     }//: Group
                 }//: Form
-                .padding(.top)
-            }.navigationTitle("Add Vehicle")
+                .navigationBarTitle("Add Vehicle")
         }
-    }
 }
 
 

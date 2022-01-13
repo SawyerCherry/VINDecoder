@@ -23,25 +23,82 @@ class CreateViewModel: ObservableObject {
 }
 
 
-
+//extension Herd {
+//    var getLivestockOnFarm: [Livestock] {
+//        return livestockInHerd!.allObjects as! [Livestock]
+//    }
+//}
 
 
 struct CreateView: View {
+    //: MARK: - Properties
     @StateObject var model = CreateViewModel()
+    @State private var showingAddVehicle: Bool = false
+    @State private var showingVehicleDetail: Bool = false
+    
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Vehicle.name, ascending: false)],
+        animation: .default)
+    
+    private var vehicles: FetchedResults<Vehicle>
+    
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("Add Vehicle", destination: AddVehicleView())
-                
-                NavigationLink("Add Maintenance Log", destination: AddMaintenenceLogView())
-                    .disabled(model.numberOfVehicles == 0)
+                ForEach(vehicles) { vehicle in
+                    GroupBox(label: HeaderView(labelText: vehicle.name!, labelImage: "fingerprint")) {
+                      
+                        Divider()
+                        VStack {
+                            HStack {
+                                Text("\(vehicle.year!) \(vehicle.make!) \(vehicle.model!)")
+                                Spacer()
+                                Button(action: {
+                                    showingVehicleDetail = true
+                                }) {
+                                    Text("wee")
+                                        .padding(.horizontal, 16)
+                                        .frame(height: 36)
+                                        .background(Color("honolulu"))
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(18)
+                                        .padding()
+                                }
+                            }
+                            
+                        }
+                        
+                        
+                       
+                    }.padding()
                     
+                }
+                
             }
-            .navigationTitle("Add/View")
-            
+            .navigationTitle("Vehicles")
+            .navigationBarItems(trailing: Button(action: {
+                showingAddVehicle = true
+            }, label: {
+                HStack {
+                    Image(systemName: "plus")
+                        .renderingMode(.template)
+                        .foregroundColor(.white)
+                    
+                    Text("Add")
+                        .foregroundColor(.white)
+                }
+                .padding(.horizontal, 16)
+                .frame(height: 36)
+                .background(Color("honolulu"))
+                .cornerRadius(18)
+            }))
+            .sheet(isPresented: $showingAddVehicle) {
+                AddVehicleView()
+                    .navigationTitle("Add Vehicle")
+            }
+        
         }
-        
-        
     }
 }
 
