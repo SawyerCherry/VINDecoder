@@ -32,7 +32,7 @@ class CreateViewModel: ObservableObject {
 
 struct CreateView: View {
     //: MARK: - Properties
-    @StateObject var model = CreateViewModel()
+    
     @State private var showingAddVehicle: Bool = false
     @State private var showingVehicleDetail: Bool = false
     
@@ -43,38 +43,41 @@ struct CreateView: View {
     
     private var vehicles: FetchedResults<Vehicle>
     
+    @StateObject var model = CreateViewModel()
+    
     var body: some View {
         NavigationView {
             List {
                 ForEach(vehicles) { vehicle in
                     GroupBox(label: HeaderView(labelText: vehicle.name!, labelImage: "fingerprint")) {
-                      
+                        
                         Divider()
                         VStack {
                             HStack {
                                 Text("\(vehicle.year!) \(vehicle.make!) \(vehicle.model!)")
                                 Spacer()
-                                Button(action: {
-                                    showingVehicleDetail = true
-                                }) {
-                                    Text("wee")
-                                        .padding(.horizontal, 16)
-                                        .frame(height: 36)
-                                        .background(Color("honolulu"))
-                                        .foregroundColor(Color.white)
-                                        .cornerRadius(18)
-                                        .padding()
+                                
+                                NavigationLink(destination: VehicleDetailView(vehicle: vehicle), isActive: $showingVehicleDetail) {
+                                    Button(action: {
+                                        showingVehicleDetail = true
+                                    }) {
+                                        Text("Details")
+                                            .padding(.horizontal, 16)
+                                            .frame(height: 36)
+                                            .background(Color("honolulu"))
+                                            .foregroundColor(Color.white)
+                                            .cornerRadius(18)
+                                            .padding()
+                                    }.tag(vehicle as Vehicle?)
                                 }
                             }
-                            
                         }
-                        
-                        
-                       
                     }.padding()
-                    
+                        .tag(vehicle as Vehicle?)
                 }
-                
+            
+                .background(Color("honolulu"))
+                .cornerRadius(8)
             }
             .navigationTitle("Vehicles")
             .navigationBarItems(trailing: Button(action: {
@@ -97,7 +100,7 @@ struct CreateView: View {
                 AddVehicleView()
                     .navigationTitle("Add Vehicle")
             }
-        
+            
         }
     }
 }

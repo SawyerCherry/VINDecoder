@@ -131,6 +131,11 @@ struct PersistenceController {
         return (try? container.viewContext.fetch(fetch).count) ?? 0
     }
     
+    func numberOfMaintenanceLogs() -> Int {
+        let fetch = MaintenanceLog.fetchRequest()
+        return (try? container.viewContext.fetch(fetch).count) ?? 0
+    }
+    
     private func save() {
         do {
             try container.viewContext.save()
