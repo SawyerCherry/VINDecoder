@@ -78,7 +78,7 @@ struct VehicleView: View {
     @State private var showingVehicleDetail = false
 
     var body: some View {
-        GroupBox(label: HeaderView(labelText: vehicle.name!, labelImage: "fingerprint")) {
+        GroupBox(label: HeaderView(labelText: vehicle.name!, labelImage: "car.circle")) {
             Divider()
                 HStack {
                     Text("\(vehicle.year!) \(vehicle.make!) \(vehicle.model!)")

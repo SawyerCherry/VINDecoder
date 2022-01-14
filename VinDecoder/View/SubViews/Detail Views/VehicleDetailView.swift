@@ -77,7 +77,7 @@ struct VehicleDetailView: View {
                         Spacer()
                     }
                     
-                    NavigationLink(destination: MaintenanceLogDetailView(), isActive: $showingMaintenceLogDetails) {
+                    NavigationLink(destination: MaintenanceLogDetailView(vehicle: vehicle), isActive: $showingMaintenceLogDetails) {
                         Button(action: {
                             showingMaintenceLogDetails = true
                         }) {

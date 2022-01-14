@@ -7,22 +7,18 @@
 
 import SwiftUI
 
-extension MaintenanceLog {
+extension Vehicle {
     var getAllMaintenence: [MaintenanceLog] {
-        return vehicle?.maintenanceLogs!.allObjects as! [MaintenanceLog]
+        return maintenanceLogs!.allObjects as! [MaintenanceLog]
     }
 }
 struct MaintenanceLogDetailView: View {
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \MaintenanceLog.title, ascending: false)],
-        animation: .default)
-    
-    private var logs: FetchedResults<MaintenanceLog>
+    var vehicle: Vehicle
     
     var body: some View {
         ScrollView {
-            ForEach(logs) { log in
+            ForEach(vehicle.getAllMaintenence) { log in
                 MaintenanceCardView(maintenanceLog: log)
             }//:Loop
         }//:Loop
@@ -33,7 +29,6 @@ struct MaintenanceLogDetailView: View {
 struct MaintenanceCardView: View {
     
     @ObservedObject var maintenanceLog: MaintenanceLog
-
     
     var body: some View {
         GroupBox(label: HeaderView(labelText: "Maintenence Log", labelImage: "wrench.and.screwdriver")) {
